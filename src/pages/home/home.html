@@ -1,0 +1,35 @@
+<ion-header>
+  
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Bienvenido, {{user}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let m of movies | filterBy: searchQuery" tappable (click)="openDetallePelicula(m)">
+      <div class="img-container">
+        <img [src]="m.posterUrl">
+      </div>
+          <div class="info-container">
+            <h1>{{m.title}}</h1>
+            <h4>{{m.genre}}</h4>
+          </div>
+          <ion-icon item-end name="star" *ngIf="m.Favorita"></ion-icon>
+    </ion-item>
+    
+  </ion-list>
+  
+  </ion-content> 
+  <ion-footer>
+    <ion-toolbar>
+      <ion-searchbar
+        [(ngModel)]="searchQuery"
+        [animated]="true"
+        [showCancelButton]="true"
+        placeholder="Buscar película por título, genero"></ion-searchbar>
+    </ion-toolbar>
+  </ion-footer>

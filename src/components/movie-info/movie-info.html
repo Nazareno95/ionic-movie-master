@@ -1,0 +1,26 @@
+<ion-card>
+  <img [src]="movie.posterUrl"/>
+  <ion-card-content>
+    <ion-card-title>
+      <span class="movie-title">{{movie.title}}</span>
+      <span class="movie-score">({{movie.score}}/{{maxScore}})</span>
+    </ion-card-title>
+    <button ion-button color="dark" full outline (click)="addFavorita()" icon-start>
+      <ion-icon name="star"></ion-icon>
+      {{favorita ? favoritaMsg : notFavoritaMsg}}
+    </button>
+    <p>
+      <span class="movie-rating" [ngClass]="{'not-available-now': !(movie.availableNow)}">{{movie.rating}}</span>
+      {{movie.sinopsis}}
+    </p>
+    <div class="actions-group">
+      <button ion-button color="secondary" (click)="likeMovie()">
+        Me gusta
+      </button>
+      <button ion-button color="danger" (click)="dislikeMovie()">
+        No me gusta
+      </button>
+      
+    </div>
+  </ion-card-content>
+</ion-card>

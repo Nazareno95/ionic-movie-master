@@ -1,0 +1,7 @@
+{
+  "name": "MisPeliculas",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

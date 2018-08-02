@@ -1,0 +1,19 @@
+home-content {
+  $home-green: #88B533;
+  .title {
+    text-transform: uppercase;
+    text-shadow: -2px 2px 2px lightgrey;
+    color: $home-green;
+    font-weight: bold;
+    text-align: center;
+  }
+  .content {
+    background-color: $home-green;
+    border: 1px solid black;
+    padding: 2rem;
+    .course-name {
+      text-transform: uppercase;
+      background-color: white;
+    }
+  }
+}

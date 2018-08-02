@@ -1,0 +1,34 @@
+<ion-content padding>
+  <ion-row>
+    <ion-col text-center col-12 col-md-6 offset-md-3>
+      <img src="assets/imgs/logo.png" alt="Logo">
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <ion-row class="login-form-container">
+      <ion-col col-10 offset-1 class="login-form">
+        <form #loginForm="ngForm" (submit)="login()">
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="person" item-start class="text-primary"></ion-icon>
+              usuario
+            </ion-label>
+  
+            <ion-input type="text" #userName name="userName" [(ngModel)]="user.name" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+              Contraseña
+            </ion-label>
+            <ion-input type="password" #password name="password" [(ngModel)]="user.password" required></ion-input>
+          </ion-item>
+          <p text-right ion-text color="dark" tappable (click)="forgotPass()"><strong>Te olvidaste la contraseña?</strong></p>
+          <button ion-button full [disabled]="!loginForm.valid" type="submit">
+            Iniciar sesión
+          </button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

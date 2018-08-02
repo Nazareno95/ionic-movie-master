@@ -1,0 +1,13 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons left>
+      <button ion-button (click)="cerrarModal();">Cerrar</button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <movie-info  [movie]="movie" (movieAction)="action($event)"></movie-info>
+</ion-content>
